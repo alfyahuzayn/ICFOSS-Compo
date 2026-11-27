@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:EHL-{employee}-{log_date}",
  "creation": "2026-11-23 17:18:24.349681",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -22,7 +23,9 @@
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "fieldname": "column_break_hfwo",
@@ -39,7 +42,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "Log Date",
-   "reqd": 1
+   "reqd": 1,
+   "set_only_once": 1
   },
   {
    "default": "Attendance",
@@ -67,7 +71,8 @@
   {
    "fieldname": "earned_minutes",
    "fieldtype": "Int",
-   "label": "Earned Minutes"
+   "label": "Earned Minutes",
+   "read_only_depends_on": "eval:doc.source==\"Attendance\""
   },
   {
    "fieldname": "section_break_uimt",
@@ -76,15 +81,17 @@
   {
    "fieldname": "reason",
    "fieldtype": "Small Text",
-   "label": "Reason"
+   "label": "Reason",
+   "mandatory_depends_on": "eval:doc.source==\"Manual\""
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-11-23 17:21:28.291116",
+ "modified": "2026-11-24 12:18:56.829558",
  "modified_by": "Administrator",
  "module": "ICFOSS Compo",
  "name": "Extra Hours Log",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
