@@ -44,8 +44,10 @@ doc_events = {
         "on_submit": "icfoss_compo.earning.on_attendance_submit",
         "on_cancel": "icfoss_compo.earning.on_attendance_cancel",
     },
+    "Compensatory Leave Request": {
+        "validate": "icfoss_compo.limits.validate_clr",
+    },
 }
-
 
 
 

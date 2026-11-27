@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "autoname": "format:CR-{YYYY}-{#####}",
+ "creation": "2026-11-24 12:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "column_break_main",
+  "from_date",
+  "to_date",
+  "days_section",
+  "days",
+  "summary_section",
+  "total_available_minutes",
+  "allocated_minutes",
+  "column_break_summary",
+  "leave_days",
+  "cap_month",
+  "remarks",
+  "workflow_state",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Extra Hours From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Extra Hours To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "days_section",
+   "fieldtype": "Section Break",
+   "label": "Days Used (filled in by the system, oldest first)"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Table",
+   "label": "Days",
+   "options": "Compo Request Day",
+   "read_only": 1
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "total_available_minutes",
+   "fieldtype": "Int",
+   "label": "Total Available (minutes)",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "allocated_minutes",
+   "fieldtype": "Int",
+   "label": "Used By This Request (minutes)",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_summary",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "leave_days",
+   "fieldtype": "Float",
+   "label": "Compensatory Off Days",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cap_month",
+   "fieldtype": "Date",
+   "label": "Counts Against Month",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Workflow State",
+   "no_copy": 1,
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Compo Request",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-24 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Icfoss Compo",
+ "name": "Compo Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "HR User"
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "employee_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

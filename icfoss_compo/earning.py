@@ -187,7 +187,10 @@ def backfill(from_date, to_date):
 
     counts = {}
     for r in rows:
-        result = process_attendance(r)
+        try:
+            result = process_attendance(r)
+        except frappe.ValidationError:
+            result = "blocked_in_use"
         counts[result] = counts.get(result, 0) + 1
 
     frappe.db.commit()
