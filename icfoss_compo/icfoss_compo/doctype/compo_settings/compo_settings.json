@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-11-24 12:15:32.434988",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_hours",
+  "shift_start",
+  "shift_end",
+  "column_break_thresholds",
+  "morning_threshold",
+  "evening_threshold",
+  "section_break_rules",
+  "count_both_sides_together",
+  "minutes_per_compensatory_off",
+  "max_compo_days_per_month",
+  "column_break_rules",
+  "leave_type",
+  "carry_over_months"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_hours",
+   "fieldtype": "Section Break",
+   "label": "Working Hours"
+  },
+  {
+   "default": "09:30:00",
+   "fieldname": "shift_start",
+   "fieldtype": "Time",
+   "label": "Shift Start"
+  },
+  {
+   "default": "17:30:00",
+   "fieldname": "shift_end",
+   "fieldtype": "Time",
+   "label": "Shift End"
+  },
+  {
+   "fieldname": "column_break_thresholds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "08:30:00",
+   "description": "Punch-in at or before this time earns morning extra hours",
+   "fieldname": "morning_threshold",
+   "fieldtype": "Time",
+   "label": "Morning Threshold"
+  },
+  {
+   "default": "18:30:00",
+   "description": "Punch-out at or after this time earns evening extra hours",
+   "fieldname": "evening_threshold",
+   "fieldtype": "Time",
+   "label": "Evening Threshold"
+  },
+  {
+   "fieldname": "section_break_rules",
+   "fieldtype": "Section Break",
+   "label": "Compensatory Off Rules"
+  },
+  {
+   "default": "0",
+   "description": "If ON: early arrival + late departure count together when they add up to more than 60 minutes",
+   "fieldname": "count_both_sides_together",
+   "fieldtype": "Check",
+   "label": "Count Both Sides Together"
+  },
+  {
+   "default": "480",
+   "fieldname": "minutes_per_compensatory_off",
+   "fieldtype": "Int",
+   "label": "Minutes Per Compensatory Off"
+  },
+  {
+   "default": "2",
+   "fieldname": "max_compo_days_per_month",
+   "fieldtype": "Float",
+   "label": "Max Compo Days Per Month"
+  },
+  {
+   "fieldname": "column_break_rules",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Compensatory Off",
+   "fieldname": "leave_type",
+   "fieldtype": "Link",
+   "label": "Leave Type",
+   "options": "Leave Type"
+  },
+  {
+   "default": "0",
+   "description": "0 = hours must be used within the month they were earned",
+   "fieldname": "carry_over_months",
+   "fieldtype": "Int",
+   "label": "Carry-Over Months"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-24 12:15:32.434988",
+ "modified_by": "Administrator",
+ "module": "ICFOSS Compo",
+ "name": "Compo Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

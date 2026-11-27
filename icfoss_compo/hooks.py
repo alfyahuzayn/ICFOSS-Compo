@@ -33,6 +33,23 @@ app_license = "mit"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+
+
+
+
+after_install = "icfoss_compo.install.after_install"
+
+doc_events = {
+    "Attendance": {
+        "on_submit": "icfoss_compo.earning.on_attendance_submit",
+        "on_cancel": "icfoss_compo.earning.on_attendance_cancel",
+    },
+}
+
+
+
+
+
 # Svg Icons
 # ------------------
 # include app icons in desk

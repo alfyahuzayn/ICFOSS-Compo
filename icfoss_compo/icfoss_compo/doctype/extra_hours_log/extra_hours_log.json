@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-11-23 17:18:24.349681",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "log_date",
+  "source",
+  "evening_minutes",
+  "column_break_hfwo",
+  "employee_name",
+  "attendance",
+  "morning_minutes",
+  "earned_minutes",
+  "section_break_uimt",
+  "reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_hfwo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Log Date",
+   "reqd": 1
+  },
+  {
+   "default": "Attendance",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "Attendance\nManual"
+  },
+  {
+   "fieldname": "evening_minutes",
+   "fieldtype": "Int",
+   "label": "Evening Minutes"
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Link",
+   "label": "Attendance",
+   "options": "Attendance"
+  },
+  {
+   "fieldname": "morning_minutes",
+   "fieldtype": "Int",
+   "label": "Morning Minutes"
+  },
+  {
+   "fieldname": "earned_minutes",
+   "fieldtype": "Int",
+   "label": "Earned Minutes"
+  },
+  {
+   "fieldname": "section_break_uimt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-11-23 17:21:28.291116",
+ "modified_by": "Administrator",
+ "module": "ICFOSS Compo",
+ "name": "Extra Hours Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
